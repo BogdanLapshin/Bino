@@ -1,0 +1,149 @@
+.team {
+  overflow: hidden;
+  padding-top: 92px;
+  background: url('../img/team/bg.jpg') center no-repeat;
+  background-size: cover;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(#000, 0.75);
+  }
+  &__svg {
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+
+    transform: translate(0, 0) scale(1.05);
+    @media screen and (max-width: 950px) {
+      display: none;
+    }
+  }
+}
+.team__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.team__custom {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  gap: 40px;
+  @media screen and (max-width: 950px) {
+    display: flex;
+  }
+  @media screen and (max-width: 720px) {
+    gap: 30px;
+  }
+}
+.teammate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29%;
+  @media screen and (max-width: 720px) {
+    width: 47%;
+  }
+  @media screen and (max-width: 520px) {
+    width: 100%;
+  }
+}
+.teammate__photo {
+  width: 70px;
+  height: 70px;
+  border: 3px solid $main-color;
+  border-radius: 50%;
+}
+.teammate__info {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: $main-color;
+    margin-bottom: 3px;
+  }
+}
+.teammate__name {
+  color: $main-color;
+  font-family: $Open-Sans-Semi;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0 3px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+.teammate__position {
+  color: $main-light;
+  font-family: $Sans-Pro;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+.name__teammate {
+  color: $main-color;
+  font-family: $Open-Sans-Semi;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 1.8px;
+}
+.position__name {
+  color: $main-light;
+  font-family: $Sans-Pro;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+}
+
+.teammates {
+  &__card {
+    &:hover {
+      .teammates__text {
+        opacity: 1;
+      }
+    }
+  }
+  &__text {
+    opacity: 0;
+    position: relative;
+
+    @include transition;
+    &::after {
+      position: absolute;
+      background: #000;
+      width: 300px;
+      height: 300px;
+    }
+  }
+  &__photo {
+    stroke: $main-color;
+    stroke-width: 5px;
+    filter: drop-shadow(0 10px 5px #000);
+    cursor: pointer;
+
+    @include transition;
+    &:hover {
+      filter: drop-shadow(0 0 12px #000000);
+    }
+  }
+}

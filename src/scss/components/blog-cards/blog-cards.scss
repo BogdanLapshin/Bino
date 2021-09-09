@@ -1,0 +1,197 @@
+.blog__txt-card {
+  position: relative;
+  box-sizing: border-box;
+  padding: 71px 51px 50px 49px;
+  background-color: $main-color;
+  &:nth-child(5),
+  &:nth-child(7) {
+    &::before {
+      left: unset;
+      right: -27px;
+      border-color: transparent transparent transparent $main-color;
+      border-width: 35px 0 35px 28px;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 200px;
+    left: -27px;
+    border-style: solid;
+    border-width: 35px 28px 35px 0;
+    border-color: transparent $main-color transparent transparent;
+    z-index: 3;
+  }
+  @media screen and (max-width: 1550px) {
+    padding: 30px;
+  }
+  @media screen and (max-width: 1280px) {
+    padding: 24px;
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 71px 51px 50px 49px;
+    &:nth-child(4) {
+      &::before {
+        left: unset;
+        right: -27px;
+        border-color: transparent transparent transparent $main-color;
+        border-width: 35px 0 35px 28px;
+      }
+    }
+    &:nth-child(5) {
+      &::before {
+        right: unset;
+        left: -27px;
+        border-color: transparent $main-color transparent transparent;
+        border-width: 35px 28px 35px 0;
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    padding: 40px;
+  }
+  @media screen and (max-width: 640px) {
+    padding: 20px;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 71px 40px 50px;
+  }
+  @media screen and (max-width: 380px) {
+    padding: 30px;
+  }
+}
+
+.card__pre-title {
+  color: $main-light;
+  font-family: $Open-Sans;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  margin-bottom: 32px;
+}
+
+.card__title {
+  color: $main-light;
+  font-family: $Open-Sans-Semi;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 1280px) {
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
+}
+
+.card__span {
+  width: 44px;
+  height: 4px;
+  background-color: $main-light;
+  margin-bottom: 49px;
+}
+
+.card__txt {
+  width: 100%;
+  color: $main-light;
+  font-family: $Open-Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 55px;
+  @media screen and (max-width: 1280px) {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+    margin-bottom: 55px;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+}
+
+.cards__img {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    & > div {
+      transform: scale(0.7);
+    }
+  }
+  & > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    cursor: pointer;
+
+    @include transition;
+  }
+
+  &-coffee {
+    background: url('../img/blog/coffe.webp') center center no-repeat;
+    background-size: cover;
+  }
+
+  &-clocks {
+    background: url('../img/blog/clocks.webp') center center no-repeat;
+    background-size: cover;
+  }
+
+  &-road {
+    background: url('../img/blog/road.webp') center center no-repeat;
+    background-size: cover;
+  }
+
+  &-car {
+    background: url('../img/blog/car.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.read__more {
+  color: $main-light;
+  font-family: $Sans-Semi-Italic;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 24px;
+  font-weight: 600;
+  i {
+    margin-left: 8px;
+
+    @include transition;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    i {
+      margin-left: 12px;
+    }
+  }
+}
